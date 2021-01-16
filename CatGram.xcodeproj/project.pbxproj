@@ -25,6 +25,18 @@
 		040186DA25B1E81A003B34AA /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040186D925B1E81A003B34AA /* ImageGridView.swift */; };
 		04B18E4E25B1EF6700EBBF0E /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B18E4D25B1EF6700EBBF0E /* UploadView.swift */; };
 		04B18E5125B1F24400EBBF0E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B18E5025B1F24400EBBF0E /* ImagePicker.swift */; };
+		04DB14EC25B218880088E069 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB14EB25B218880088E069 /* PostImageView.swift */; };
+		04DB14EF25B224A10088E069 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB14EE25B224A10088E069 /* ProfileView.swift */; };
+		04DB14F225B2257A0088E069 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB14F125B2257A0088E069 /* ProfileHeaderView.swift */; };
+		04DB14F525B2311F0088E069 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB14F425B2311F0088E069 /* SettingsView.swift */; };
+		04DB150225B235640088E069 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB150125B235640088E069 /* SettingsLabelView.swift */; };
+		04DB150525B237FA0088E069 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB150425B237FA0088E069 /* SettingsRowView.swift */; };
+		04DB150825B23D950088E069 /* SettingsEditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB150725B23D950088E069 /* SettingsEditTextView.swift */; };
+		04DB150B25B2460D0088E069 /* SettingsEditImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB150A25B2460D0088E069 /* SettingsEditImageView.swift */; };
+		04DB150E25B253480088E069 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB150D25B253480088E069 /* SignUpView.swift */; };
+		04DB151125B256A60088E069 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB151025B256A60088E069 /* OnboardingView.swift */; };
+		04DB151425B258B60088E069 /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB151325B258B60088E069 /* SignInWithAppleButtonCustom.swift */; };
+		04DB151725B25B500088E069 /* OnboardingViewPart2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB151625B25B500088E069 /* OnboardingViewPart2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +60,18 @@
 		040186D925B1E81A003B34AA /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		04B18E4D25B1EF6700EBBF0E /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		04B18E5025B1F24400EBBF0E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		04DB14EB25B218880088E069 /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
+		04DB14EE25B224A10088E069 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		04DB14F125B2257A0088E069 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		04DB14F425B2311F0088E069 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		04DB150125B235640088E069 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		04DB150425B237FA0088E069 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		04DB150725B23D950088E069 /* SettingsEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditTextView.swift; sourceTree = "<group>"; };
+		04DB150A25B2460D0088E069 /* SettingsEditImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditImageView.swift; sourceTree = "<group>"; };
+		04DB150D25B253480088E069 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		04DB151025B256A60088E069 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		04DB151325B258B60088E069 /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
+		04DB151625B25B500088E069 /* OnboardingViewPart2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPart2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +141,14 @@
 				040186C625B10E24003B34AA /* CommentsView.swift */,
 				040186D325B1E0A2003B34AA /* BrowserView.swift */,
 				04B18E4D25B1EF6700EBBF0E /* UploadView.swift */,
+				04DB14EB25B218880088E069 /* PostImageView.swift */,
+				04DB14EE25B224A10088E069 /* ProfileView.swift */,
+				04DB150D25B253480088E069 /* SignUpView.swift */,
+				04DB14F425B2311F0088E069 /* SettingsView.swift */,
+				04DB150A25B2460D0088E069 /* SettingsEditImageView.swift */,
+				04DB150725B23D950088E069 /* SettingsEditTextView.swift */,
+				04DB151025B256A60088E069 /* OnboardingView.swift */,
+				04DB151625B25B500088E069 /* OnboardingViewPart2.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -129,6 +161,10 @@
 				040186D625B1E135003B34AA /* CarouselView.swift */,
 				040186D925B1E81A003B34AA /* ImageGridView.swift */,
 				04B18E5025B1F24400EBBF0E /* ImagePicker.swift */,
+				04DB14F125B2257A0088E069 /* ProfileHeaderView.swift */,
+				04DB150125B235640088E069 /* SettingsLabelView.swift */,
+				04DB150425B237FA0088E069 /* SettingsRowView.swift */,
+				04DB151325B258B60088E069 /* SignInWithAppleButtonCustom.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -222,20 +258,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				040186B925B0F33C003B34AA /* FeedView.swift in Sources */,
+				04DB151425B258B60088E069 /* SignInWithAppleButtonCustom.swift in Sources */,
 				040186C025B0FC14003B34AA /* PostModel.swift in Sources */,
+				04DB150225B235640088E069 /* SettingsLabelView.swift in Sources */,
+				04DB14EC25B218880088E069 /* PostImageView.swift in Sources */,
+				04DB150E25B253480088E069 /* SignUpView.swift in Sources */,
 				0401869C25B0E7AC003B34AA /* ContentView.swift in Sources */,
 				040186CA25B111C1003B34AA /* MessageView.swift in Sources */,
 				040186D425B1E0A2003B34AA /* BrowserView.swift in Sources */,
 				040186B525B0F248003B34AA /* Extensions.swift in Sources */,
 				040186DA25B1E81A003B34AA /* ImageGridView.swift in Sources */,
 				040186C425B10056003B34AA /* PostArrayObject.swift in Sources */,
+				04DB14EF25B224A10088E069 /* ProfileView.swift in Sources */,
 				040186BC25B0F4C6003B34AA /* PostView.swift in Sources */,
 				040186CD25B112D3003B34AA /* CommentModel.swift in Sources */,
+				04DB150B25B2460D0088E069 /* SettingsEditImageView.swift in Sources */,
 				040186C725B10E24003B34AA /* CommentsView.swift in Sources */,
+				04DB14F225B2257A0088E069 /* ProfileHeaderView.swift in Sources */,
 				04B18E4E25B1EF6700EBBF0E /* UploadView.swift in Sources */,
+				04DB151125B256A60088E069 /* OnboardingView.swift in Sources */,
 				04B18E5125B1F24400EBBF0E /* ImagePicker.swift in Sources */,
 				040186D725B1E135003B34AA /* CarouselView.swift in Sources */,
 				0401869A25B0E7AC003B34AA /* CatGramApp.swift in Sources */,
+				04DB14F525B2311F0088E069 /* SettingsView.swift in Sources */,
+				04DB150825B23D950088E069 /* SettingsEditTextView.swift in Sources */,
+				04DB151725B25B500088E069 /* OnboardingViewPart2.swift in Sources */,
+				04DB150525B237FA0088E069 /* SettingsRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
