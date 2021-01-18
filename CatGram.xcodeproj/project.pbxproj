@@ -37,6 +37,7 @@
 		04DB151125B256A60088E069 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB151025B256A60088E069 /* OnboardingView.swift */; };
 		04DB151425B258B60088E069 /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB151325B258B60088E069 /* SignInWithAppleButtonCustom.swift */; };
 		04DB151725B25B500088E069 /* OnboardingViewPart2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB151625B25B500088E069 /* OnboardingViewPart2.swift */; };
+		1205785425B5447900EF7DBC /* LikeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1205785325B5447900EF7DBC /* LikeAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		04DB151025B256A60088E069 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		04DB151325B258B60088E069 /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
 		04DB151625B25B500088E069 /* OnboardingViewPart2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPart2.swift; sourceTree = "<group>"; };
+		1205785325B5447900EF7DBC /* LikeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				040186BE25B0FBFF003B34AA /* Model */,
-				040186B325B0F231003B34AA /* Helpers */,
 				040186AF25B0F054003B34AA /* Views */,
 				040186AB25B0EBBE003B34AA /* LaunchScreen.storyboard */,
 				0401869D25B0E7B0003B34AA /* Assets.xcassets */,
 				040186A225B0E7B0003B34AA /* Info.plist */,
 				0401869F25B0E7B0003B34AA /* Preview Content */,
+				040186B325B0F231003B34AA /* Helpers */,
 			);
 			path = CatGram;
 			sourceTree = "<group>";
@@ -165,6 +167,7 @@
 				04DB150125B235640088E069 /* SettingsLabelView.swift */,
 				04DB150425B237FA0088E069 /* SettingsRowView.swift */,
 				04DB151325B258B60088E069 /* SignInWithAppleButtonCustom.swift */,
+				1205785325B5447900EF7DBC /* LikeAnimationView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				040186C425B10056003B34AA /* PostArrayObject.swift in Sources */,
 				04DB14EF25B224A10088E069 /* ProfileView.swift in Sources */,
 				040186BC25B0F4C6003B34AA /* PostView.swift in Sources */,
+				1205785425B5447900EF7DBC /* LikeAnimationView.swift in Sources */,
 				040186CD25B112D3003B34AA /* CommentModel.swift in Sources */,
 				04DB150B25B2460D0088E069 /* SettingsEditImageView.swift in Sources */,
 				040186C725B10E24003B34AA /* CommentsView.swift in Sources */,

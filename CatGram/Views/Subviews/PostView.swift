@@ -12,6 +12,11 @@ struct PostView: View {
     @State var post: PostModel
     var showHeaderAndFooter: Bool
     
+    @State var animateLike: Bool = false
+    @State var addheartAnimationToView: Bool
+    
+    @State var showActionSheet: Bool = false
+    
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0, content: {
             
@@ -37,23 +42,51 @@ struct PostView: View {
                         
                     Spacer()
                     
-                    Image(systemName: "ellipsis")
-                        .font(.headline)
+                    
+                    Button(action: {
+                        showActionSheet.toggle()
+                    }, label: {
+                        Image(systemName: "ellipsis")
+                            .font(.headline)
+                    })
+                    .actionSheet(isPresented: $showActionSheet, content: {
+                        getActionSheet()
+                    })
                 }
                 .padding(.all, 6)
             }
             
             // MARK: IMAGE
+            ZStack {
+                
+                Image("dog1")
+                    .resizable()
+                    .scaledToFit()
+                
+                if addheartAnimationToView{
+                    LikeAnimationView(animate: $animateLike)
+                }
+                
+            }
             
-            Image("dog1")
-                .resizable()
-                .scaledToFit()
             
             // MARK: FOOTER
             if showHeaderAndFooter {
                 HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
-                    Image(systemName: "heart")
-                        .font(.title3)
+                    
+                    Button (action: {
+                        if post.likedByUser {
+                            //unlike
+                            unlikePost()
+                        } else {
+                            // like
+                            likePost()
+                        }
+                    }, label: {
+                        Image(systemName: post.likedByUser ? "heart.fill" : "heart")
+                            .font(.title3)
+                    })
+                    .accentColor(post.likedByUser ? .red : .primary)
                     
                     // MARK: COMMENT ICON
                     NavigationLink(
@@ -82,6 +115,44 @@ struct PostView: View {
             }
         })
     }
+    
+    // MARK : FUNCTIONS
+    
+    func likePost() {
+        
+        // update the local data
+        let updatePost = PostModel(postID: post.postID, userID: post.userID, username: post.username, caption: post.caption, dateCreated: post.dateCreated, likeCount: post.likeCount + 1, likedByUser: true)
+        self.post = updatePost
+        
+        animateLike = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            animateLike = false
+        }
+    }
+    
+    func unlikePost() {
+        
+        // update the local data
+        let updatePost = PostModel(postID: post.postID, userID: post.userID, username: post.username, caption: post.caption, dateCreated: post.dateCreated, likeCount: post.likeCount - 1, likedByUser: false)
+        self.post = updatePost
+    }
+    
+    func getActionSheet() -> ActionSheet {
+        
+        return ActionSheet(title: Text("What would you like to do"), message: nil, buttons: [
+            .destructive(Text("Report"), action: {
+                print("REPORT POST")
+            }),
+            
+            .default(Text("Learn more..."), action: {
+                print("LEARN MORE PRESSED")
+            }),
+            
+            .cancel()
+        
+        ])
+    }
+    
 }
 
 struct PostView_Previews: PreviewProvider {
@@ -89,7 +160,7 @@ struct PostView_Previews: PreviewProvider {
     static var post: PostModel = PostModel(postID: "", userID: "", username: "Wentao Wu", caption: "This is a test caption", dateCreated: Date(), likeCount: 0, likedByUser: false)
     
     static var previews: some View {
-        PostView(post: post, showHeaderAndFooter: true)
+        PostView(post: post, showHeaderAndFooter: true, addheartAnimationToView: true)
             .previewLayout(.sizeThatFits)
     }
 }
