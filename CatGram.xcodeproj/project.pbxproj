@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040095B625B5FBE90049722C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040095B525B5FBE90049722C /* GoogleService-Info.plist */; };
+		040095F525B618560049722C /* SignInWithGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040095F425B618560049722C /* SignInWithGoogle.swift */; };
+		040095F925B621400049722C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040095F825B621400049722C /* AuthService.swift */; };
+		0400961725B631FE0049722C /* Enums & Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400961625B631FE0049722C /* Enums & Structs.swift */; };
+		0400963525B6377D0049722C /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400963425B6377D0049722C /* ImageManager.swift */; };
 		0401869A25B0E7AC003B34AA /* CatGramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401869925B0E7AC003B34AA /* CatGramApp.swift */; };
 		0401869C25B0E7AC003B34AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401869B25B0E7AC003B34AA /* ContentView.swift */; };
 		0401869E25B0E7B0003B34AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0401869D25B0E7B0003B34AA /* Assets.xcassets */; };
@@ -38,9 +43,15 @@
 		04DB151425B258B60088E069 /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB151325B258B60088E069 /* SignInWithAppleButtonCustom.swift */; };
 		04DB151725B25B500088E069 /* OnboardingViewPart2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB151625B25B500088E069 /* OnboardingViewPart2.swift */; };
 		1205785425B5447900EF7DBC /* LikeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1205785325B5447900EF7DBC /* LikeAnimationView.swift */; };
+		522840467408CC536CDC3B12 /* Pods_CatGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073DA4A3479033B7C029E597 /* Pods_CatGram.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040095B525B5FBE90049722C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		040095F425B618560049722C /* SignInWithGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogle.swift; sourceTree = "<group>"; };
+		040095F825B621400049722C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0400961625B631FE0049722C /* Enums & Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums & Structs.swift"; sourceTree = "<group>"; };
+		0400963425B6377D0049722C /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		0401869625B0E7AC003B34AA /* CatGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0401869925B0E7AC003B34AA /* CatGramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGramApp.swift; sourceTree = "<group>"; };
 		0401869B25B0E7AC003B34AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,7 +84,10 @@
 		04DB151025B256A60088E069 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		04DB151325B258B60088E069 /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
 		04DB151625B25B500088E069 /* OnboardingViewPart2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPart2.swift; sourceTree = "<group>"; };
+		073DA4A3479033B7C029E597 /* Pods_CatGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1205785325B5447900EF7DBC /* LikeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationView.swift; sourceTree = "<group>"; };
+		1B7721A2096EDCE65EEDB05E /* Pods-CatGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatGram.release.xcconfig"; path = "Target Support Files/Pods-CatGram/Pods-CatGram.release.xcconfig"; sourceTree = "<group>"; };
+		1C9AD9BF0C0136A16146ED99 /* Pods-CatGram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatGram.debug.xcconfig"; path = "Target Support Files/Pods-CatGram/Pods-CatGram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,17 +95,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522840467408CC536CDC3B12 /* Pods_CatGram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040095EE25B617F50049722C /* SignProviders */ = {
+			isa = PBXGroup;
+			children = (
+				040095F725B621280049722C /* Firebase */,
+				040095F425B618560049722C /* SignInWithGoogle.swift */,
+			);
+			path = SignProviders;
+			sourceTree = "<group>";
+		};
+		040095F725B621280049722C /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				040095F825B621400049722C /* AuthService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		0400963325B6375E0049722C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0400963425B6377D0049722C /* ImageManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		0401868D25B0E7AC003B34AA = {
 			isa = PBXGroup;
 			children = (
 				0401869825B0E7AC003B34AA /* CatGram */,
 				0401869725B0E7AC003B34AA /* Products */,
+				D8D815D09839A36BB1A76960 /* Pods */,
+				E2D7DB2411D63C3306027CF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,11 +148,14 @@
 		0401869825B0E7AC003B34AA /* CatGram */ = {
 			isa = PBXGroup;
 			children = (
+				0400963325B6375E0049722C /* Utilities */,
+				040095EE25B617F50049722C /* SignProviders */,
 				040186BE25B0FBFF003B34AA /* Model */,
 				040186AF25B0F054003B34AA /* Views */,
 				040186AB25B0EBBE003B34AA /* LaunchScreen.storyboard */,
 				0401869D25B0E7B0003B34AA /* Assets.xcassets */,
 				040186A225B0E7B0003B34AA /* Info.plist */,
+				040095B525B5FBE90049722C /* GoogleService-Info.plist */,
 				0401869F25B0E7B0003B34AA /* Preview Content */,
 				040186B325B0F231003B34AA /* Helpers */,
 			);
@@ -176,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				040186B425B0F248003B34AA /* Extensions.swift */,
+				0400961625B631FE0049722C /* Enums & Structs.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -190,6 +236,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D8D815D09839A36BB1A76960 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C9AD9BF0C0136A16146ED99 /* Pods-CatGram.debug.xcconfig */,
+				1B7721A2096EDCE65EEDB05E /* Pods-CatGram.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2D7DB2411D63C3306027CF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				073DA4A3479033B7C029E597 /* Pods_CatGram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,9 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 040186A525B0E7B0003B34AA /* Build configuration list for PBXNativeTarget "CatGram" */;
 			buildPhases = (
+				11106EC474CA02D84DE9A14F /* [CP] Check Pods Manifest.lock */,
 				0401869225B0E7AC003B34AA /* Sources */,
 				0401869325B0E7AC003B34AA /* Frameworks */,
 				0401869425B0E7AC003B34AA /* Resources */,
+				C91071F31CDD66E3CD9C477E /* [CP] Embed Pods Frameworks */,
+				A4D8F08F0717424F4D7F4159 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,12 +314,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				040186AC25B0EBBE003B34AA /* LaunchScreen.storyboard in Resources */,
+				040095B625B5FBE90049722C /* GoogleService-Info.plist in Resources */,
 				040186A125B0E7B0003B34AA /* Preview Assets.xcassets in Resources */,
 				0401869E25B0E7B0003B34AA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11106EC474CA02D84DE9A14F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CatGram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4D8F08F0717424F4D7F4159 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatGram/Pods-CatGram-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatGram/Pods-CatGram-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CatGram/Pods-CatGram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C91071F31CDD66E3CD9C477E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatGram/Pods-CatGram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatGram/Pods-CatGram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CatGram/Pods-CatGram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0401869225B0E7AC003B34AA /* Sources */ = {
@@ -264,12 +390,14 @@
 				04DB151425B258B60088E069 /* SignInWithAppleButtonCustom.swift in Sources */,
 				040186C025B0FC14003B34AA /* PostModel.swift in Sources */,
 				04DB150225B235640088E069 /* SettingsLabelView.swift in Sources */,
+				040095F525B618560049722C /* SignInWithGoogle.swift in Sources */,
 				04DB14EC25B218880088E069 /* PostImageView.swift in Sources */,
 				04DB150E25B253480088E069 /* SignUpView.swift in Sources */,
 				0401869C25B0E7AC003B34AA /* ContentView.swift in Sources */,
 				040186CA25B111C1003B34AA /* MessageView.swift in Sources */,
 				040186D425B1E0A2003B34AA /* BrowserView.swift in Sources */,
 				040186B525B0F248003B34AA /* Extensions.swift in Sources */,
+				0400963525B6377D0049722C /* ImageManager.swift in Sources */,
 				040186DA25B1E81A003B34AA /* ImageGridView.swift in Sources */,
 				040186C425B10056003B34AA /* PostArrayObject.swift in Sources */,
 				04DB14EF25B224A10088E069 /* ProfileView.swift in Sources */,
@@ -278,6 +406,7 @@
 				040186CD25B112D3003B34AA /* CommentModel.swift in Sources */,
 				04DB150B25B2460D0088E069 /* SettingsEditImageView.swift in Sources */,
 				040186C725B10E24003B34AA /* CommentsView.swift in Sources */,
+				0400961725B631FE0049722C /* Enums & Structs.swift in Sources */,
 				04DB14F225B2257A0088E069 /* ProfileHeaderView.swift in Sources */,
 				04B18E4E25B1EF6700EBBF0E /* UploadView.swift in Sources */,
 				04DB151125B256A60088E069 /* OnboardingView.swift in Sources */,
@@ -286,6 +415,7 @@
 				0401869A25B0E7AC003B34AA /* CatGramApp.swift in Sources */,
 				04DB14F525B2311F0088E069 /* SettingsView.swift in Sources */,
 				04DB150825B23D950088E069 /* SettingsEditTextView.swift in Sources */,
+				040095F925B621400049722C /* AuthService.swift in Sources */,
 				04DB151725B25B500088E069 /* OnboardingViewPart2.swift in Sources */,
 				04DB150525B237FA0088E069 /* SettingsRowView.swift in Sources */,
 			);
@@ -412,11 +542,13 @@
 		};
 		040186A625B0E7B0003B34AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C9AD9BF0C0136A16146ED99 /* Pods-CatGram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CatGram/Preview Content\"";
+				DEVELOPMENT_TEAM = U59FZGU2KP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CatGram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -424,7 +556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobilewareinc.CatGram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moby.CatGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -433,11 +565,13 @@
 		};
 		040186A725B0E7B0003B34AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7721A2096EDCE65EEDB05E /* Pods-CatGram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CatGram/Preview Content\"";
+				DEVELOPMENT_TEAM = U59FZGU2KP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CatGram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -445,7 +579,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobilewareinc.CatGram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moby.CatGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var currentUserID: String? = nil
+    @Environment(\.colorScheme) var colorScheme
+    
+    @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
     
     var body: some View {
         TabView {
@@ -50,12 +52,13 @@ struct ContentView: View {
                     Text("Profile")
                 }
         }
-        .accentColor(Color.MyTheme.purpleColor)
+        .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
     }
 }

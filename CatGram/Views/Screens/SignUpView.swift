@@ -28,10 +28,11 @@ struct SignUpView: View {
                 .minimumScaleFactor(0.5)
                 .foregroundColor(Color.MyTheme.purpleColor)
             
-            Text("Create an account and join the fun!")
+            Text("Click the button below to create an account and join the fun!")
                 .font(.headline)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
+                .foregroundColor(Color.MyTheme.purpleColor)
             
             Button(action: {
                 showOnboarding.toggle()
@@ -63,5 +64,6 @@ struct SignUpView: View {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpView()
+            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }

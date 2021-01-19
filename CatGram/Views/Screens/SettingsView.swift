@@ -10,6 +10,9 @@ import SwiftUI
 struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
+    
+    @State var showSignOutError: Bool = false
     
     var body: some View {
         
@@ -56,9 +59,16 @@ struct SettingsView: View {
                             SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
                         })
                     
+                    Button(action: {
+                        signOut()
+                    }, label: {
+                        SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.MyTheme.purpleColor)
+                    })
+                    .alert(isPresented: $showSignOutError, content: {
+                        return Alert(title: Text("Error signing out 🥵"))
+                    })
                     
-                    
-                    SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.MyTheme.purpleColor)
+
                 })
                 .padding()
                 
@@ -100,15 +110,17 @@ struct SettingsView: View {
             })
             .navigationBarTitle("Settings")
             .navigationBarTitleDisplayMode(.large)
-            .navigationBarItems(leading: Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Image(systemName: "xmark")
-                    .font(.title)
-            })
-            .accentColor(.primary)
+            .navigationBarItems(leading:
+                                    Button(action: {
+                                        presentationMode.wrappedValue.dismiss()
+                                    }, label: {
+                                        Image(systemName: "xmark")
+                                            .font(.title)
+                                    })
+                                    .accentColor(.primary)
             )
         }
+        .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
     }
     
     // MARK: FUNCTIONS
@@ -120,10 +132,27 @@ struct SettingsView: View {
             UIApplication.shared.open(url)
         }
     }
+    
+    func signOut() {
+        AuthService.instance.logOutUser { (success) in
+            
+            if success {
+                print("Successfully logged out")
+                
+                // Dismiss setting view
+                self.presentationMode.wrappedValue.dismiss()
+                
+            } else {
+                print("Error logged out")
+                self.showSignOutError.toggle()
+            }
+        }
+    }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }
