@@ -14,6 +14,7 @@
 		0400963525B6377D0049722C /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400963425B6377D0049722C /* ImageManager.swift */; };
 		0400975625B730990049722C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400975525B730990049722C /* DataService.swift */; };
 		0400977325B7743E0049722C /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400977225B7743E0049722C /* LazyView.swift */; };
+		0400977625B8A3E40049722C /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400977525B8A3E40049722C /* AnalyticsService.swift */; };
 		0401869A25B0E7AC003B34AA /* CatGramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401869925B0E7AC003B34AA /* CatGramApp.swift */; };
 		0401869C25B0E7AC003B34AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401869B25B0E7AC003B34AA /* ContentView.swift */; };
 		0401869E25B0E7B0003B34AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0401869D25B0E7B0003B34AA /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		0400963425B6377D0049722C /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		0400975525B730990049722C /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0400977225B7743E0049722C /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		0400977525B8A3E40049722C /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		0401869625B0E7AC003B34AA /* CatGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0401869925B0E7AC003B34AA /* CatGramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGramApp.swift; sourceTree = "<group>"; };
 		0401869B25B0E7AC003B34AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				040095F825B621400049722C /* AuthService.swift */,
 				0400975525B730990049722C /* DataService.swift */,
+				0400977525B8A3E40049722C /* AnalyticsService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				04B18E4E25B1EF6700EBBF0E /* UploadView.swift in Sources */,
 				04DB151125B256A60088E069 /* OnboardingView.swift in Sources */,
 				04B18E5125B1F24400EBBF0E /* ImagePicker.swift in Sources */,
+				0400977625B8A3E40049722C /* AnalyticsService.swift in Sources */,
 				040186D725B1E135003B34AA /* CarouselView.swift in Sources */,
 				0401869A25B0E7AC003B34AA /* CatGramApp.swift in Sources */,
 				0400975625B730990049722C /* DataService.swift in Sources */,
