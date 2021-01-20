@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BrowserView: View {
     
-    var posts = PostArrayObject()
+    var posts: PostArrayObject
     
     var body: some View {
         ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
@@ -24,7 +24,7 @@ struct BrowserView: View {
 struct BrowserView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            BrowserView()
+            BrowserView(posts: PostArrayObject(shuffled: true))
         }
     }
 }

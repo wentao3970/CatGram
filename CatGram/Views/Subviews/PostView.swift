@@ -11,7 +11,6 @@ struct PostView: View {
     
     @State var post: PostModel
     var showHeaderAndFooter: Bool
-    @State var postImage: UIImage = UIImage(named: "dog1")!
     
     @State var animateLike: Bool = false
     @State var addheartAnimationToView: Bool
@@ -19,6 +18,17 @@ struct PostView: View {
     @State var showActionSheet: Bool = false
     
     @State var actionSheetType: PostActionSheetOption = .general
+    
+    @State var profileImage: UIImage = UIImage(named: "logo.loading")!
+    @State var postImage: UIImage = UIImage(named: "logo.loading")!
+    
+    @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
+    
+    // Alerts
+    @State var alertTitle: String = ""
+    @State var alertMessage: String = ""
+    @State var showAlert: Bool = false
+    
     
     enum PostActionSheetOption {
         case general
@@ -34,9 +44,11 @@ struct PostView: View {
                 HStack {
                     
                     NavigationLink (
-                        destination: ProfileView(isMyProfile: false, profileDisplayName: post.username, profileUserID: post.userID),
+                        destination: LazyView(content : {
+                            ProfileView(isMyProfile: false, profileDisplayName: post.username, profileUserID: post.userID, posts: PostArrayObject(userID: post.userID))
+                        }),
                         label: {
-                            Image("dog1")
+                            Image(uiImage: profileImage)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -71,6 +83,11 @@ struct PostView: View {
                 Image(uiImage: postImage)
                     .resizable()
                     .scaledToFit()
+                    .onTapGesture(count: 2) {
+                        if !post.likedByUser {
+                            likePost()
+                        }
+                    }
                 
                 if addheartAnimationToView{
                     LikeAnimationView(animate: $animateLike)
@@ -99,7 +116,7 @@ struct PostView: View {
                     
                     // MARK: COMMENT ICON
                     NavigationLink(
-                        destination: CommentsView(),
+                        destination: CommentsView(post: post),
                         label: {
                             Image(systemName: "bubble.middle.bottom")
                                 .font(.title3)
@@ -128,27 +145,67 @@ struct PostView: View {
                 }
             }
         })
+        .onAppear{
+            getImages()
+        }
+        .alert(isPresented: $showAlert) { () -> Alert in
+            return Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
     }
     
     // MARK : FUNCTIONS
     
     func likePost() {
         
+        guard let userID = currentUserID else {
+            print("Cannot find userID while liking post")
+            return
+        }
+        
         // update the local data
         let updatePost = PostModel(postID: post.postID, userID: post.userID, username: post.username, caption: post.caption, dateCreated: post.dateCreated, likeCount: post.likeCount + 1, likedByUser: true)
         self.post = updatePost
         
+        // Animate UI
         animateLike = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             animateLike = false
         }
+        
+        // Update the database
+        DataService.instance.likePost(postID: post.postID, currentUserID: userID)
     }
     
     func unlikePost() {
         
+        guard let userID = currentUserID else {
+            print("Cannot find userID while unliking post")
+            return
+        }
+        
         // update the local data
         let updatePost = PostModel(postID: post.postID, userID: post.userID, username: post.username, caption: post.caption, dateCreated: post.dateCreated, likeCount: post.likeCount - 1, likedByUser: false)
         self.post = updatePost
+        
+        // Update the database
+        DataService.instance.unlikePost(postID: post.postID, currentUserID: userID)
+    }
+    
+    func getImages() {
+        
+        // Get profile image
+        ImageManager.instance.downloadProfileImage(userID: post.userID) { (returnedImage) in
+            if let image = returnedImage {
+                self.profileImage = image
+            }
+        }
+        
+        // Get post iamge
+        ImageManager.instance.downloadPostImage(postID: post.postID) { (returnedImage) in
+            if let image = returnedImage {
+                self.postImage = image
+            }
+        }
     }
     
     func getActionSheet() -> ActionSheet {
@@ -194,6 +251,18 @@ struct PostView: View {
     
     func reportPost(reason: String) {
         print("REPORT POST NOW")
+        
+        DataService.instance.uploadReport(reason: reason, postID: post.postID) { (succcess) in
+            if succcess {
+                self.alertTitle = "Reported"
+                self.alertMessage = "Thanks for reporting this post. We will review it shortly and take the appropriate action!"
+                self.showAlert.toggle()
+            } else {
+                self.alertTitle = "Error"
+                self.alertMessage = "There was an error uploading the report. Please restart the app and try again"
+                self.showAlert.toggle()
+            }
+        }
     }
     
     func sharePost() {

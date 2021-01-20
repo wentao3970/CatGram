@@ -12,6 +12,8 @@
 		040095F925B621400049722C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040095F825B621400049722C /* AuthService.swift */; };
 		0400961725B631FE0049722C /* Enums & Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400961625B631FE0049722C /* Enums & Structs.swift */; };
 		0400963525B6377D0049722C /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400963425B6377D0049722C /* ImageManager.swift */; };
+		0400975625B730990049722C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400975525B730990049722C /* DataService.swift */; };
+		0400977325B7743E0049722C /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400977225B7743E0049722C /* LazyView.swift */; };
 		0401869A25B0E7AC003B34AA /* CatGramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401869925B0E7AC003B34AA /* CatGramApp.swift */; };
 		0401869C25B0E7AC003B34AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401869B25B0E7AC003B34AA /* ContentView.swift */; };
 		0401869E25B0E7B0003B34AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0401869D25B0E7B0003B34AA /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		040095F825B621400049722C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0400961625B631FE0049722C /* Enums & Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums & Structs.swift"; sourceTree = "<group>"; };
 		0400963425B6377D0049722C /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		0400975525B730990049722C /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		0400977225B7743E0049722C /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		0401869625B0E7AC003B34AA /* CatGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0401869925B0E7AC003B34AA /* CatGramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGramApp.swift; sourceTree = "<group>"; };
 		0401869B25B0E7AC003B34AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				040095F825B621400049722C /* AuthService.swift */,
+				0400975525B730990049722C /* DataService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			children = (
 				040186B425B0F248003B34AA /* Extensions.swift */,
 				0400961625B631FE0049722C /* Enums & Structs.swift */,
+				0400977225B7743E0049722C /* LazyView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -402,6 +408,7 @@
 				040186C425B10056003B34AA /* PostArrayObject.swift in Sources */,
 				04DB14EF25B224A10088E069 /* ProfileView.swift in Sources */,
 				040186BC25B0F4C6003B34AA /* PostView.swift in Sources */,
+				0400977325B7743E0049722C /* LazyView.swift in Sources */,
 				1205785425B5447900EF7DBC /* LikeAnimationView.swift in Sources */,
 				040186CD25B112D3003B34AA /* CommentModel.swift in Sources */,
 				04DB150B25B2460D0088E069 /* SettingsEditImageView.swift in Sources */,
@@ -413,6 +420,7 @@
 				04B18E5125B1F24400EBBF0E /* ImagePicker.swift in Sources */,
 				040186D725B1E135003B34AA /* CarouselView.swift in Sources */,
 				0401869A25B0E7AC003B34AA /* CatGramApp.swift in Sources */,
+				0400975625B730990049722C /* DataService.swift in Sources */,
 				04DB14F525B2311F0088E069 /* SettingsView.swift in Sources */,
 				04DB150825B23D950088E069 /* SettingsEditTextView.swift in Sources */,
 				040095F925B621400049722C /* AuthService.swift in Sources */,
