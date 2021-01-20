@@ -77,6 +77,13 @@ struct CommentsView: View {
     func getComments() {
         print("GET COMMNETS FROM DTATBASE")
         
+        guard self.commentArray.isEmpty else { return }
+        
+        if let caption = post.caption, caption.count > 1 {
+            let captionComment = CommentModel(commentID: "", userID: post.userID, username: post.username, content: caption, dateCreated: post.dateCreated)
+            self.commentArray.append(captionComment)
+        }
+        
         DataService.instance.downloadComments(postID: post.postID) { (returnedComments) in
             self.commentArray.append(contentsOf: returnedComments)
         }

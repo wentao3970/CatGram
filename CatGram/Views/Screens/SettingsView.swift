@@ -11,8 +11,11 @@ struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
-    
     @State var showSignOutError: Bool = false
+    
+    @Binding var userDisplayName: String
+    @Binding var userBio: String
+    @Binding var userProfilePicture: UIImage
     
     var body: some View {
         
@@ -41,20 +44,20 @@ struct SettingsView: View {
                 GroupBox(label: SettingsLabelView(labelText: "Profile", labelImage: "person.fill"), content: {
                     
                     NavigationLink(
-                        destination: SettingsEditTextView(submissionText: "Current display name", title: "Display name", description: "You can edit your display name here. This will be seen by other users on your profile and on your posts!", placeholder: "Your display name here..."),
+                        destination: SettingsEditTextView(submissionText: userDisplayName, title: "Display name", description: "You can edit your display name here. This will be seen by other users on your profile and on your posts!", placeholder: "Your display name here...", settingsEditTextOption: .displayName, profileText: $userDisplayName),
                         label: {
                             SettingsRowView(leftIcon: "pencil", text: "Display Name", color: Color.MyTheme.purpleColor)
                         })
                     
                     
                     NavigationLink(
-                        destination: SettingsEditTextView(submissionText: "Current bio here", title: "Profile Bio", description: "Your bio is a great place to let other users know a little about you. It will be shown on your profile only", placeholder: "Your bio here..."),
+                        destination: SettingsEditTextView(submissionText: userBio, title: "Profile Bio", description: "Your bio is a great place to let other users know a little about you. It will be shown on your profile only", placeholder: "Your bio here...", settingsEditTextOption: .bio, profileText: $userBio),
                         label: {
                             SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.MyTheme.purpleColor)
                         })
                     
                     NavigationLink (
-                        destination: SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts. Most users make it an image of themselves or of their cat!", selectedImage: UIImage(named: "dog1")!),
+                        destination: SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts. Most users make it an image of themselves or of their cat!", selectedImage: userProfilePicture, profileImage: $userProfilePicture),
                         label: {
                             SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
                         })
@@ -151,8 +154,12 @@ struct SettingsView: View {
 }
 
 struct SettingsView_Previews: PreviewProvider {
+    
+    @State static var testString: String = ""
+    @State static var image: UIImage = UIImage(named: "dog1")!
+    
     static var previews: some View {
-        SettingsView()
+        SettingsView(userDisplayName: $testString, userBio: $testString, userProfilePicture: $image)
             .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }

@@ -11,14 +11,19 @@ struct MessageView: View {
     
     @State var comment: CommentModel
     @State var profilePicture: UIImage = UIImage(named: "logo.loading")!
+    
     var body: some View {
         HStack {
             
-            Image(uiImage: profilePicture)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .cornerRadius(20)
+            NavigationLink(destination: LazyView(content: {
+                ProfileView(isMyProfile: false, profileDisplayName: comment.username, profileUserID: comment.userID, posts: PostArrayObject(userID: comment.userID))
+            })) {
+                Image(uiImage: profilePicture)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .cornerRadius(20)
+            }
             
             VStack(alignment: .leading, spacing: 4, content: {
                 
@@ -35,7 +40,7 @@ struct MessageView: View {
                     .cornerRadius(10)
             })
             
-            Spacer()
+            Spacer(minLength: 0)
         }
         .onAppear() {
             getProfileImage()
