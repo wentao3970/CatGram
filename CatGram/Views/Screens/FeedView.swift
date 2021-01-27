@@ -11,9 +11,10 @@ struct FeedView: View {
     
     @ObservedObject var posts: PostArrayObject
     var title: String
-    
+        
     var body: some View {
         ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
+            
             LazyVStack {
                 ForEach(posts.dataArray) { post in
                     PostView(post: post, showHeaderAndFooter: true, addheartAnimationToView: true)
@@ -22,6 +23,14 @@ struct FeedView: View {
         })
         .navigationBarTitle(title)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear{countPost(posts: posts)}
+    }
+    
+    
+    // MARK: FUNCTIONS
+    
+    func countPost(posts: PostArrayObject) {
+        print("There are \(posts.dataArray.count) posts showing in current feedview")
     }
 }
 

@@ -21,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             NavigationView {
-                FeedView(posts: feedPosts, title: "FEED VIEW")
+                FeedView(posts: feedPosts, title: "Feed View")
             }
             .tabItem {
                 Image(systemName: "book.fill")

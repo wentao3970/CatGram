@@ -67,6 +67,7 @@ class ImageManager {
         let path = getPostImagePath(postID: postID)
         
         // Download the image from path
+        // Use the background thread, but handle the returnedImage by using the main thread
         DispatchQueue.global(qos: .userInteractive).async {
             self.downloadImage(path: path) { (returnedImage) in
                 DispatchQueue.main.async {
@@ -78,6 +79,7 @@ class ImageManager {
     }
     
     // MARK: PRIVATE FUNCTIONS
+    
     // Functions we call from this file only
     private func getProfileImagePath(userID: String) -> StorageReference {
         let userPath = "users/\(userID)/profile"
@@ -146,7 +148,7 @@ class ImageManager {
     private func downloadImage(path: StorageReference, handler: @escaping(_ image: UIImage?) -> ()) {
         
         if let cachedImage = imageCache.object(forKey: path) {
-            print("Image found in cache")
+            print("Image found in cache, path: \(path)")
             handler(cachedImage)
             return
         } else {

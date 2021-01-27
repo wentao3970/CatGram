@@ -79,10 +79,11 @@ struct CommentsView: View {
         
         guard self.commentArray.isEmpty else { return }
         
-        if let caption = post.caption, caption.count > 1 {
-            let captionComment = CommentModel(commentID: "", userID: post.userID, username: post.username, content: caption, dateCreated: post.dateCreated)
-            self.commentArray.append(captionComment)
-        }
+//        if let caption = post.caption, caption.count > 1 {
+//            let captionComment = CommentModel(commentID: "", userID: post.userID, username: post.username, content: caption, dateCreated: post.dateCreated)
+////            print(captionComment)
+//            self.commentArray.append(captionComment)
+//        }
         
         DataService.instance.downloadComments(postID: post.postID) { (returnedComments) in
             self.commentArray.append(contentsOf: returnedComments)
@@ -114,11 +115,15 @@ struct CommentsView: View {
         guard let userID = currentUserID, let displayName = currentUserDisplayName else { return }
         
         DataService.instance.uploadComment(postID: post.postID, content: submissionText, displayName: displayName, userID: userID) { (success, returnedCommentID) in
+            
             if success, let commentID = returnedCommentID {
+                
                 let newComment = CommentModel(commentID: commentID, userID: userID, username: displayName, content: submissionText, dateCreated: Date())
+                
                 self.commentArray.append(newComment)
                 self.submissionText = ""
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                
+//                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
         }
     }

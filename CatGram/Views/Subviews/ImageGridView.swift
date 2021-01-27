@@ -12,6 +12,7 @@ struct ImageGridView: View {
     @ObservedObject var posts: PostArrayObject
     
     var body: some View {
+        
         LazyVGrid (
             columns: [
                 GridItem(.flexible()),
@@ -28,16 +29,18 @@ struct ImageGridView: View {
                         label: {
                             PostView(post: post, showHeaderAndFooter: false, addheartAnimationToView: false)
                         })
-                    
                 }
-                
         })
+        
     }
 }
 
 struct ImageGridView_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         ImageGridView(posts: PostArrayObject(shuffled: true))
             .previewLayout(.sizeThatFits)
     }
+    
 }

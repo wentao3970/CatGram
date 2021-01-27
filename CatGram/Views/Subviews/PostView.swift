@@ -202,7 +202,7 @@ struct PostView: View {
             }
         }
         
-        // Get post iamge
+        // Get post image
         ImageManager.instance.downloadPostImage(postID: post.postID) { (returnedImage) in
             if let image = returnedImage {
                 self.postImage = image

@@ -19,6 +19,8 @@ struct UploadView: View {
     var body: some View {
         ZStack {
             VStack {
+                
+                // TAKE PICTURE BUTTON
                 Button (action: {
                     sourceType = UIImagePickerController.SourceType.camera
                     showImagePicker.toggle()
@@ -31,6 +33,8 @@ struct UploadView: View {
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,  maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .background(Color.MyTheme.purpleColor)
                 
+                
+                // UPLOAD PICTURE BUTTON
                 Button (action: {
                     sourceType = UIImagePickerController.SourceType.photoLibrary
                     showImagePicker.toggle()

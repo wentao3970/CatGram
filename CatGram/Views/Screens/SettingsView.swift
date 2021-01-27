@@ -160,6 +160,6 @@ struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
         SettingsView(userDisplayName: $testString, userBio: $testString, userProfilePicture: $image)
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            .preferredColorScheme(.light)
     }
 }
