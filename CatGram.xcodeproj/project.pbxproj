@@ -108,13 +108,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		040095EE25B617F50049722C /* SignProviders */ = {
+		040095EE25B617F50049722C /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				040095F725B621280049722C /* Firebase */,
 				040095F425B618560049722C /* SignInWithGoogle.swift */,
 			);
-			path = SignProviders;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		040095F725B621280049722C /* Firebase */ = {
@@ -127,21 +127,21 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		0400963325B6375E0049722C /* Utilities */ = {
+		0400963325B6375E0049722C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				0400963425B6377D0049722C /* ImageManager.swift */,
 			);
-			path = Utilities;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		0401868D25B0E7AC003B34AA = {
 			isa = PBXGroup;
 			children = (
 				0401869825B0E7AC003B34AA /* CatGram */,
-				0401869725B0E7AC003B34AA /* Products */,
-				D8D815D09839A36BB1A76960 /* Pods */,
 				E2D7DB2411D63C3306027CF3 /* Frameworks */,
+				D8D815D09839A36BB1A76960 /* Pods */,
+				0401869725B0E7AC003B34AA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,16 +156,17 @@
 		0401869825B0E7AC003B34AA /* CatGram */ = {
 			isa = PBXGroup;
 			children = (
-				0400963325B6375E0049722C /* Utilities */,
-				040095EE25B617F50049722C /* SignProviders */,
-				040186BE25B0FBFF003B34AA /* Model */,
-				040186AF25B0F054003B34AA /* Views */,
+				040095B525B5FBE90049722C /* GoogleService-Info.plist */,
+				040186A225B0E7B0003B34AA /* Info.plist */,
 				040186AB25B0EBBE003B34AA /* LaunchScreen.storyboard */,
 				0401869D25B0E7B0003B34AA /* Assets.xcassets */,
-				040186A225B0E7B0003B34AA /* Info.plist */,
-				040095B525B5FBE90049722C /* GoogleService-Info.plist */,
-				0401869F25B0E7B0003B34AA /* Preview Content */,
 				040186B325B0F231003B34AA /* Helpers */,
+				040186BE25B0FBFF003B34AA /* Model */,
+				0401869F25B0E7B0003B34AA /* Preview Content */,
+				040095EE25B617F50049722C /* Service */,
+				0400963325B6375E0049722C /* Utils */,
+				1294AEFB269D34CE00ADE6EA /* ViewModel */,
+				040186AF25B0F054003B34AA /* Views */,
 			);
 			path = CatGram;
 			sourceTree = "<group>";
@@ -181,6 +182,10 @@
 		040186AF25B0F054003B34AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1294AEFA269D342700ADE6EA /* ProfileView */,
+				1294AEF9269D341600ADE6EA /* UploadView */,
+				1294AEF8269D33DB00ADE6EA /* BrowserView */,
+				1294AEF7269D33A700ADE6EA /* FeedView */,
 				040186B125B0F063003B34AA /* Subviews */,
 				040186B025B0F05D003B34AA /* Screens */,
 			);
@@ -192,12 +197,8 @@
 			children = (
 				0401869925B0E7AC003B34AA /* CatGramApp.swift */,
 				0401869B25B0E7AC003B34AA /* ContentView.swift */,
-				040186B825B0F33C003B34AA /* FeedView.swift */,
 				040186C625B10E24003B34AA /* CommentsView.swift */,
-				040186D325B1E0A2003B34AA /* BrowserView.swift */,
-				04B18E4D25B1EF6700EBBF0E /* UploadView.swift */,
 				04DB14EB25B218880088E069 /* PostImageView.swift */,
-				04DB14EE25B224A10088E069 /* ProfileView.swift */,
 				04DB150D25B253480088E069 /* SignUpView.swift */,
 				04DB14F425B2311F0088E069 /* SettingsView.swift */,
 				04DB150A25B2460D0088E069 /* SettingsEditImageView.swift */,
@@ -243,6 +244,45 @@
 				040186CC25B112D3003B34AA /* CommentModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1294AEF7269D33A700ADE6EA /* FeedView */ = {
+			isa = PBXGroup;
+			children = (
+				040186B825B0F33C003B34AA /* FeedView.swift */,
+			);
+			path = FeedView;
+			sourceTree = "<group>";
+		};
+		1294AEF8269D33DB00ADE6EA /* BrowserView */ = {
+			isa = PBXGroup;
+			children = (
+				040186D325B1E0A2003B34AA /* BrowserView.swift */,
+			);
+			path = BrowserView;
+			sourceTree = "<group>";
+		};
+		1294AEF9269D341600ADE6EA /* UploadView */ = {
+			isa = PBXGroup;
+			children = (
+				04B18E4D25B1EF6700EBBF0E /* UploadView.swift */,
+			);
+			path = UploadView;
+			sourceTree = "<group>";
+		};
+		1294AEFA269D342700ADE6EA /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				04DB14EE25B224A10088E069 /* ProfileView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		1294AEFB269D34CE00ADE6EA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D8D815D09839A36BB1A76960 /* Pods */ = {
