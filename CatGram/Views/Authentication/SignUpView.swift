@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct SignUpView: View {
     
     @State var showOnboarding: Bool = false

@@ -12,18 +12,17 @@ struct OnboardingViewPart2: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var displayName: String
-    @Binding var email: String
-    @Binding var providerID: String
-    @Binding var provider: String
+    @ObservedObject var authViewModel: AuthViewModel = AuthViewModel()
     
-    @State var showImagePicker: Bool = false
+    @State private var showError: Bool = false
     
     // For image picker
-    @State var imageSelected: UIImage = UIImage(named: "logo")!
+    //    @State var imageSelected: UIImage = UIImage(named: "logo")!
+    @State var showImagePicker: Bool = false
+    
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
-    @State var showError: Bool = false
+    
     
     var body: some View {
         VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
@@ -33,7 +32,7 @@ struct OnboardingViewPart2: View {
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .foregroundColor(Color.MyTheme.yellowColor)
             
-            TextField("Add your name here...", text: $displayName)
+            TextField("Add your name here...", text: $authViewModel.displayName)
                 .padding()
                 .frame(height: 60)
                 .frame(maxWidth: .infinity)
@@ -58,24 +57,27 @@ struct OnboardingViewPart2: View {
                     .padding(.horizontal)
             })
             .accentColor(Color.MyTheme.purpleColor)
-            .opacity(displayName != "" ? 1.0 : 0.0)
+            .opacity(authViewModel.displayName != "" ? 1.0 : 0.0)
             .animation(.easeIn(duration: 1.0))
         })
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
         .background(Color.MyTheme.purpleColor)
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-        .sheet(isPresented: $showImagePicker, onDismiss: createProfile, content: {
-            ImagePicker(imageSelected: $imageSelected, sourceType: $sourceType)
-        })
+        .sheet(isPresented: $showImagePicker,
+               onDismiss: createProfile,
+               content: {
+                ImagePicker(imageSelected: $authViewModel.imageSelected, sourceType: $sourceType)
+               })
         .alert(isPresented: $showError) { () -> Alert in
             return Alert(title: Text("Error creating profile 🧐"))
         }
     }
     
+    
     func createProfile() {
         
         print("CREATE PROFILE NOW")
-        AuthService.instance.createNewUserInDatabase(name: displayName, email: email, providerID: providerID, provider: provider, profileImage: imageSelected) { (returnedUserID) in
+        AuthService.instance.createNewUserInDatabase(name: authViewModel.displayName, email: authViewModel.email, providerID: authViewModel.providerID, provider: authViewModel.provider, profileImage: authViewModel.imageSelected) { (returnedUserID) in
             
             if let userID = returnedUserID {
                 // SUCESS
@@ -92,6 +94,7 @@ struct OnboardingViewPart2: View {
                     } else {
                         print("Error logging in")
                         self.showError.toggle()
+                        
                     }
                 }
                 
@@ -103,13 +106,8 @@ struct OnboardingViewPart2: View {
             
         }
     }
+    
+    
 }
 
-struct OnboardingViewPart2_Previews: PreviewProvider {
-    
-    @State static var testString: String = "Test"
-    
-    static var previews: some View {
-        OnboardingViewPart2(displayName: $testString, email: $testString, providerID: $testString, provider: $testString)
-    }
-}
+

@@ -10,14 +10,16 @@ import FirebaseAuth
 
 struct OnboardingView: View {
     
+    @ObservedObject var authViewModel: AuthViewModel = AuthViewModel()
+    
     @Environment(\.presentationMode) var presentationMode
     @State var showOnboardingPart2: Bool = false
     @State var showError: Bool = false
     
-    @State var displayName: String = ""
-    @State var email: String = ""
-    @State var providerID: String = ""
-    @State var provider: String = ""
+//    @State var displayName: String = ""
+//    @State var email: String = ""
+//    @State var providerID: String = ""
+//    @State var provider: String = ""
     
     var body: some View {
         VStack (spacing: 10) {
@@ -88,7 +90,7 @@ struct OnboardingView: View {
         .fullScreenCover(isPresented: $showOnboardingPart2, onDismiss: {
             self.presentationMode.wrappedValue.dismiss()
         }, content: {
-            OnboardingViewPart2(displayName: $displayName, email: $email, providerID: $providerID, provider: $provider)
+            OnboardingViewPart2()
         })
         .alert(isPresented: $showError, content: {
             return Alert(title: Text("Error signing in 🥲"))
@@ -106,10 +108,10 @@ struct OnboardingView: View {
                     // NEW USER
                     if let providerID = returnedProviderID, !isError {
                         // For new user, continue to the onboarding part 2
-                        self.displayName = name
-                        self.email = email
-                        self.providerID = providerID
-                        self.provider = provider
+                        authViewModel.displayName = name
+                        authViewModel.email = email
+                        authViewModel.providerID = providerID
+                        authViewModel.provider = provider
                         self.showOnboardingPart2.toggle()
                     } else {
                         // ERROR
